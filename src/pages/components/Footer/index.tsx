@@ -29,7 +29,10 @@ export default function Footer() {
           {' Felix Wong. '}
         </a>
         Forked from 
-        <a href="https://github.com/Mayandev/notion-avatar" className="hover:underline">
+        <a
+          href="https://github.com/Mayandev/notion-avatar"
+          className="hover:underline"
+        >
           {' notion-avatar. '}
         </a>
       </div>
