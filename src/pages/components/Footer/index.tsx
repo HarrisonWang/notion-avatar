@@ -28,9 +28,9 @@ export default function Footer() {
         <a href="https://x.com/felix12777" className="hover:underline">
           {' Felix Wong. '}
         </a>
-        Powered By
-        <a href="https://x.com/phillzou" className="hover:underline">
-          {' mayandev. '}
+        Forked from 
+        <a href="https://github.com/Mayandev/notion-avatar" className="hover:underline">
+          {' notion-avatar. '}
         </a>
       </div>
     </footer>
