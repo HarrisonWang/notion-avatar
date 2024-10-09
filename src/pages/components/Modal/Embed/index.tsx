@@ -1,4 +1,5 @@
 import { AvatarConfig, ImageApiType, ImageType } from '@/types';
+import { getBaseUrl } from '@/utils/getBaseUrl';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
 import Modal from '../Common';
@@ -29,10 +30,9 @@ export default function EmbedModal({
   const { t } = useTranslation();
 
   useEffect(() => {
+    const baseUrl = getBaseUrl();
     setUrl(
-      `${process.env.NEXT_PUBLIC_URL}/api/${apiType[imageType]}/${btoa(
-        JSON.stringify(config),
-      )}`,
+      `${baseUrl}/api/${apiType[imageType]}/${btoa(JSON.stringify(config))}`,
     );
   }, []);
 

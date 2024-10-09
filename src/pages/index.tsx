@@ -2,11 +2,13 @@ import type { GetStaticPropsContext, NextPage } from 'next';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import { getBaseUrl } from '@/utils/getBaseUrl';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AvatarEditor from './components/AvatarEditor';
 
-const URL = `https://notion-avatar.vercel.app/`;
+const URL = getBaseUrl();
 
 const Home: NextPage = () => {
   const { t } = useTranslation(`common`);
@@ -101,7 +103,7 @@ const Home: NextPage = () => {
         <meta property="og:image" content="https://i.imgur.com/F5R0K03.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://i.imgur.com/F5R0K03.png" />
-        <meta name="twitter:site" content="@phillzou" />
+        <meta name="twitter:site" content="@voywang" />
         <meta name="twitter:title" content={t(`siteTitle`)} />
         <meta name="twitter:description" content={t(`siteDescription`)} />
       </Head>

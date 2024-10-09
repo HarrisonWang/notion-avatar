@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import chromium from 'chrome-aws-lambda';
 import { AvatarConfig, AvatarPart } from '@/types';
+import { getBaseUrl } from '@/utils/getBaseUrl';
 
 async function getBrowserInstance() {
   const executablePath = await chromium.executablePath;
@@ -43,7 +44,8 @@ export default async function handler(
     Buffer.from(params as string, `base64`).toString(),
   ) as AvatarConfig;
 
-  const url = `${process.env.NEXT_PUBLIC_URL}?${Object.keys(config)
+  const baseUrl = getBaseUrl(req);
+  const url = `${baseUrl}?${Object.keys(config)
     .map(
       (type) =>
         `${type}=${encodeURIComponent(config[type as keyof AvatarConfig])}`,
